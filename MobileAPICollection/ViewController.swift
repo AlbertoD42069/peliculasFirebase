@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
       
         if indexPath.section == 0{
             let celdaPopulares = TablaPeliculas.dequeueReusableCell(withIdentifier: "CellPopulares", for: indexPath) as! PopularesTableViewCell
-            
+            //este es un pinhi cambio
             celdaPopulares.lblNombrePelicula.text = "nombre: \(MoviePopular[indexPath.row].title!.capitalized)"
             celdaPopulares.lblDescripcion.text = "descripcion: \(MoviePopular[indexPath.row].overview!.capitalized)"
             celdaPopulares.lblCalificacion.text = "Idioma: \(MoviePopular[indexPath.row].original_language!.capitalized)"
