@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellUpComing" rowHeight="148" id="KGk-i7-Jjw" customClass="UpComingTableViewCell" customModule="MobileAPICollection" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="512" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="512" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-tH-hHv">
+                        <rect key="frame" x="20" y="10" width="129" height="129"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="129" id="XbY-fx-NFf"/>
+                            <constraint firstAttribute="height" constant="129" id="cRs-Gh-hHx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-8W-a7K">
+                        <rect key="frame" x="157" y="10" width="335" height="55"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvp-as-WrN">
+                        <rect key="frame" x="157" y="98" width="335" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="euX-4e-oP6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tvp-as-WrN" firstAttribute="top" secondItem="iSR-8W-a7K" secondAttribute="bottom" constant="33" id="754-zY-Bee"/>
+                    <constraint firstItem="iSR-8W-a7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="8Ee-2l-c1r"/>
+                    <constraint firstItem="iO0-tH-hHv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MPL-pV-6QU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="tvp-as-WrN" secondAttribute="bottom" constant="18" id="UKJ-6g-1DV"/>
+                    <constraint firstItem="tvp-as-WrN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ws2-B6-4wM"/>
+                    <constraint firstItem="iSR-8W-a7K" firstAttribute="leading" secondItem="iO0-tH-hHv" secondAttribute="trailing" constant="8" symbolic="YES" id="XTH-0R-rnO"/>
+                    <constraint firstItem="iO0-tH-hHv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="gWY-6u-sMl"/>
+                    <constraint firstAttribute="trailing" secondItem="iSR-8W-a7K" secondAttribute="trailing" constant="20" symbolic="YES" id="jTd-pw-tTh"/>
+                    <constraint firstAttribute="bottom" secondItem="iO0-tH-hHv" secondAttribute="bottom" constant="9" id="mMO-0o-r3e"/>
+                    <constraint firstItem="tvp-as-WrN" firstAttribute="leading" secondItem="iO0-tH-hHv" secondAttribute="trailing" constant="8" symbolic="YES" id="oNq-lY-1UL"/>
+                    <constraint firstItem="tvp-as-WrN" firstAttribute="top" secondItem="iSR-8W-a7K" secondAttribute="bottom" constant="33" id="xkO-Q8-Koi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgPoster" destination="iO0-tH-hHv" id="GTc-ym-Nz6"/>
+                <outlet property="lblFechaEstreno" destination="tvp-as-WrN" id="PPp-Ae-Udu"/>
+                <outlet property="lblNombrePelicula" destination="iSR-8W-a7K" id="yu6-gW-wOe"/>
+            </connections>
+            <point key="canvasLocation" x="276.81159420289856" y="60.9375"/>
+        </tableViewCell>
+    </objects>
+</document>
