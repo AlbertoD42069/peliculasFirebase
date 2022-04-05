@@ -14,6 +14,7 @@ struct MoviesPResponse: Decodable{
 }
 
 struct Movie: Decodable{
+    var id:Int?
     var title:String?
     var release_date:String?
     var poster_path:String

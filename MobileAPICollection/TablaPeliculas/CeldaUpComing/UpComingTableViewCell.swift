@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol favoritoUpComingProtocol {
+    func guardarUpComing(cell: UpComingTableViewCell)
+}
+
 class UpComingTableViewCell: UITableViewCell {
 
+    var favoritoUpComingDelegate : favoritoUpComingProtocol?
+
+    @IBOutlet weak var btnFavorito: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +30,7 @@ class UpComingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func btnActionFavorito(_ sender: Any) {
+        favoritoUpComingDelegate?.guardarUpComing(cell: self)
+    }
 }

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,43 +30,49 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjF-91-g7p">
-                        <rect key="frame" x="157" y="64" width="335" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NET-tt-M39">
                         <rect key="frame" x="157" y="118" width="335" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l04-33-xst">
+                        <rect key="frame" x="445" y="49" width="47" height="51"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="star" catalog="system" symbolScale="large" renderingMode="template"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="btnActionFavoritos:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8ra-CC-Z4I"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="EyA-HQ-Q2c" secondAttribute="trailing" constant="20" symbolic="YES" id="84e-9a-ZZU"/>
+                    <constraint firstItem="l04-33-xst" firstAttribute="top" secondItem="EyA-HQ-Q2c" secondAttribute="bottom" constant="18" id="9Bv-g0-2r6"/>
                     <constraint firstAttribute="bottom" secondItem="NET-tt-M39" secondAttribute="bottom" constant="9" id="Elc-av-RmW"/>
-                    <constraint firstItem="HjF-91-g7p" firstAttribute="leading" secondItem="BEL-4Z-Xvc" secondAttribute="trailing" constant="8" symbolic="YES" id="FKd-z4-6HU"/>
                     <constraint firstItem="NET-tt-M39" firstAttribute="leading" secondItem="BEL-4Z-Xvc" secondAttribute="trailing" constant="8" symbolic="YES" id="Ipu-Pc-pXF"/>
                     <constraint firstAttribute="bottom" secondItem="BEL-4Z-Xvc" secondAttribute="bottom" constant="9" id="JGC-t3-OqZ"/>
+                    <constraint firstAttribute="trailing" secondItem="l04-33-xst" secondAttribute="trailing" constant="20" symbolic="YES" id="OSm-6n-FSb"/>
                     <constraint firstItem="EyA-HQ-Q2c" firstAttribute="leading" secondItem="BEL-4Z-Xvc" secondAttribute="trailing" constant="8" symbolic="YES" id="Wye-QC-Q9a"/>
-                    <constraint firstItem="NET-tt-M39" firstAttribute="top" secondItem="HjF-91-g7p" secondAttribute="bottom" constant="33" id="bQ6-Ac-Jy2"/>
                     <constraint firstItem="BEL-4Z-Xvc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="bkK-yY-TzT"/>
                     <constraint firstItem="BEL-4Z-Xvc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hvT-xN-d6N"/>
                     <constraint firstAttribute="trailing" secondItem="NET-tt-M39" secondAttribute="trailing" constant="20" symbolic="YES" id="lyg-Sf-AXj"/>
                     <constraint firstItem="EyA-HQ-Q2c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="u68-Nl-Tuu"/>
-                    <constraint firstItem="HjF-91-g7p" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vfG-pN-UZa"/>
-                    <constraint firstItem="HjF-91-g7p" firstAttribute="top" secondItem="EyA-HQ-Q2c" secondAttribute="bottom" constant="33" id="zAj-JK-80u"/>
+                    <constraint firstItem="NET-tt-M39" firstAttribute="top" secondItem="l04-33-xst" secondAttribute="bottom" constant="18" id="vlo-jr-9tY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnFavoritos" destination="l04-33-xst" id="YBu-ZB-Df8"/>
                 <outlet property="imgPoster" destination="BEL-4Z-Xvc" id="sPD-iK-iCp"/>
                 <outlet property="lblCalificacion" destination="NET-tt-M39" id="e4z-Gf-Ifq"/>
-                <outlet property="lblDescripcion" destination="HjF-91-g7p" id="ggP-Nt-eju"/>
                 <outlet property="lblNombrePelicula" destination="EyA-HQ-Q2c" id="NmT-Lj-oXj"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

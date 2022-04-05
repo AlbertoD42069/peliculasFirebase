@@ -14,6 +14,7 @@ struct MoviesUpComingResponse: Decodable{
 }
 
 struct MovieUpComing: Decodable{
+    var id:String?
     var title:String?
     var release_date:String?
     var poster_path:String

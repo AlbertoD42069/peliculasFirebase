@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetallesPeliculaPopularesViewController: UIViewController {
+class DetallesPeliculaViewController: UIViewController {
     
     
     @IBOutlet weak var imgPosterImagen: UIImageView!
@@ -15,7 +15,10 @@ class DetallesPeliculaPopularesViewController: UIViewController {
     @IBOutlet weak var lblIdiomaPelicula: UILabel!
     @IBOutlet weak var lblDescripcionPelicula: UILabel!
     @IBOutlet weak var lblNombrePelicula: UILabel!
+    
     var moviePopulares:Movie?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if
@@ -28,11 +31,11 @@ class DetallesPeliculaPopularesViewController: UIViewController {
             lblDescripcionPelicula.text = descripcionPelicula
             lblIdiomaPelicula.text = idiomaPelicula
         
-            /*imagenPoster.imageView?.contentMode = .scaleAspectFill
+            imagenPoster.imageView?.contentMode = .scaleAspectFill
             let linkDefault = "https://image.tmdb.org/t/p/w500/"
             let completeLink = linkDefault + moviePopulares[indexPath].poster_path
             imagenPoster.imageView?.downloaded(from: completeLink)
-            imagenPoster.imageView?.clipsToBounds = true*/
+            imagenPoster.imageView?.clipsToBounds = true
             
         }
         // Do any additional setup after loading the view.

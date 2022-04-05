@@ -8,6 +8,10 @@ target 'MobileAPICollection' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'GoogleSignIn'
+  
   # Pods for MobileAPICollection
 
 end

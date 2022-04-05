@@ -6,20 +6,45 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var TablaPeliculas: UITableView!
-
+class ViewController: UITabBarController{
+    var db = Firestore.firestore()
+    /*@IBOutlet weak var TablaPeliculas: UITableView!
+    
+    
+    
     var MoviePopular: [Movie] = []
-    var MovieUpComing: [Movie] = []
+    var MovieUpComing: [Movie] = []*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*executeJsonPopulares {self.TablaPeliculas.reloadData()}
-        executeJsonUpComing {self.TablaPeliculas.reloadData()}*/
         
-        let JSONPopular = ExecuteJSON()
+        let home = TablaPeliculasViewController(email: "email")
+        let favoritos = TablaFavoritosViewController()
+        let inicioSesion = LoginViewController()
+        
+        home.title = "Home"
+        favoritos.title = "Favoritos"
+        inicioSesion.title = "Sesion"
+        
+        self .setViewControllers([home,favoritos,inicioSesion], animated: true)
+        guard let items = self.tabBar.items else {return}
+        let imagenes =
+        ["house.fill","star.fill","person.fill"]
+        for x in 0...2 {
+            items[x].image = UIImage(systemName: imagenes[x])
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+        
+        /*let JSONPopular = ExecuteJSON()
         JSONPopular.executeJSON(url: Urls.linkPopular) { moviePopular in
             self.MoviePopular = moviePopular
             self.TablaPeliculas.reloadData()
@@ -40,9 +65,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         TablaPeliculas.register(celdaPopulares, forCellReuseIdentifier: "CellPopulares")
         TablaPeliculas.register(celdaUpComing, forCellReuseIdentifier: "CellUpComing")
         
-        // Do any additional setup after loading the view.
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        */
+    //}
+    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MoviePopular.count
         return MovieUpComing.count
         
@@ -53,9 +78,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if indexPath.section == 0{
             let celdaPopulares = TablaPeliculas.dequeueReusableCell(withIdentifier: "CellPopulares", for: indexPath) as! PopularesTableViewCell
             //este es un pinhi cambio
-            celdaPopulares.lblNombrePelicula.text = "nombre: \(MoviePopular[indexPath.row].title!.capitalized)"
-            celdaPopulares.lblDescripcion.text = "descripcion: \(MoviePopular[indexPath.row].overview!.capitalized)"
-            celdaPopulares.lblCalificacion.text = "Idioma: \(MoviePopular[indexPath.row].original_language!.capitalized)"
+            celdaPopulares.lblNombrePelicula.text = "Nombre: \(MoviePopular[indexPath.row].title!.capitalized)"
+            //celdaPopulares.lblDescripcion.text = "descripcion: \(MoviePopular[indexPath.row].overview!.capitalized)"
+            celdaPopulares.lblCalificacion.text = "Fecha Estreno: \(MoviePopular[indexPath.row].release_date!.capitalized)"
             
             
             celdaPopulares.imageView?.contentMode = .scaleAspectFill
@@ -63,14 +88,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let completeLink = linkDefault + MoviePopular[indexPath.row].poster_path
             celdaPopulares.imageView?.downloaded(from: completeLink)
             celdaPopulares.imageView?.clipsToBounds = true
+        //*************************************************************************
+            celdaPopulares.favoritoPopularDelegate = self
             
-            
+        //*************************************************************************
             return celdaPopulares
         }
         //return UITableViewCell()
 /*=======================================================================================================*/
         let CeldaUpComing = TablaPeliculas.dequeueReusableCell(withIdentifier: "CellUpComing", for: indexPath) as! UpComingTableViewCell
-        CeldaUpComing.lblNombrePelicula.text = "nombre: \(MovieUpComing[indexPath.row].title!.capitalized)"
+        CeldaUpComing.lblNombrePelicula.text = "Nombre: \(MovieUpComing[indexPath.row].title!.capitalized)"
         CeldaUpComing.lblFechaEstreno.text = "Fecha estreno: \(MovieUpComing[indexPath.row].release_date!.capitalized)"
         
         CeldaUpComing.imageView?.contentMode = .scaleAspectFill
@@ -78,6 +105,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let completeLink = linkDefault + MovieUpComing[indexPath.row].poster_path
         CeldaUpComing.imageView?.downloaded(from: completeLink)
         CeldaUpComing.imageView?.clipsToBounds = true
+        
+    //*****************************************************
+        CeldaUpComing.favoritoUpComingDelegate = self
+    //*****************************************************
         
         return CeldaUpComing
     }
@@ -93,47 +124,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detallesPopulares = DetallesPeliculaPopularesViewController()
-        let itemPopulares = MoviePopular[indexPath.row]
-        detallesPopulares.moviePopulares = itemPopulares
-        navigationController?.pushViewController(detallesPopulares, animated: true)
-        
-    }
-    /*func executeJsonPopulares(completed: @escaping () -> () ){
-        
-        let URL = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=c89f997b9f805d783c81fc1e854ed7d1")
-        URLSession.shared.dataTask(with: URL!){(data,response,error) in
+        if (indexPath.section==0){
+            let detallesPopulares = DetallesPeliculaViewController()
+            let peliPopular = MoviePopular[indexPath.row]
+            detallesPopulares.pelicula = peliPopular
+            navigationController?.pushViewController(detallesPopulares, animated: true)
+        }else {
+            let detallesUpComing = DetallesPeliculaViewController()
+            let peliUpComing = MovieUpComing[indexPath.row]
+            detallesUpComing.pelicula = peliUpComing
+            navigationController?.pushViewController(detallesUpComing, animated: true)
             
-            if error == nil {
-                do {
-                    let response:MoviesPopularsResponse = try JSONDecoder().decode(MoviesPopularsResponse.self, from: data!)
-                    DispatchQueue.main.async {
-                        self.ResultPopulares = response.results
-                        self.TablaPeliculas.reloadData()
-                        completed()
-                    }
-                }catch{
-                    print("json error")
-                }
-            }
-        }.resume()
+        }
+    }
+}
+
+extension ViewController: FavoritoPopularProtocol, favoritoUpComingProtocol {
+    func guardarUpComing(cell: UpComingTableViewCell) {
+        if let indexPath = self.TablaPeliculas.indexPath(for: cell){
+            let idPelicula = MovieUpComing[indexPath.row].id!
+            let nombrePelicula = MovieUpComing[indexPath.row].title!
+            cambiaColorCelda(indexCell: indexPath.row)
+            //cambio de color
+            db.collection("Pelicula Favoritas").document(nombrePelicula).setData([
+                "ID": idPelicula,
+                "nombrePelicula": nombrePelicula])
+        }
+            
     }
     
-    func executeJsonUpComing(completeds: @escaping () -> () ){
-        let URL = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=c89f997b9f805d783c81fc1e854ed7d1")
-        URLSession.shared.dataTask(with: URL!){(data,response,error) in
-            if error == nil {
-                do {
-                    let response:MoviesUpComingResponse = try JSONDecoder().decode(MoviesUpComingResponse.self, from: data!)
-                    DispatchQueue.main.async {
-                        self.ResultUpComing = response.results
-                        self.TablaPeliculas.reloadData()
-                        completeds()
-                    }
-                }catch {
-                    print("json error")
-                }
-            }
-        }.resume()
-    }*/
+    func guardarPopularFavorito(cell: PopularesTableViewCell) {
+        
+        if  let indexPath = self.TablaPeliculas.indexPath(for: cell) {
+            let idPelicula = MoviePopular[indexPath.row].id!
+            let nombrePelicula = MoviePopular[indexPath.row].title!
+            cambiaColorCelda(indexCell: indexPath.row)
+            //cambiar de color
+            
+            db.collection("Pelicula Favoritas").document(nombrePelicula).setData([
+                "ID": idPelicula,
+                "nombrePelicula": nombrePelicula])
+        }
+   }
+    
+    func cambiaColorCelda(indexCell : Int) {
+       /*
+        let item = TablaPeliculas[indexPath.row]
+        
+        if item.select == true {
+            celda.Check.backgroundColor = UIColor.green
+        } else {
+            celda.Check.backgroundColor = UIColor.white
+        }*/
+        //aqui debes cambiar de color la celda con el incide que regresa la funcion
+    }
+      */*/*/*/*/
+          }
 }

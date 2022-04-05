@@ -38,16 +38,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7k6-ZL-9fs">
+                        <rect key="frame" x="445" y="37" width="47" height="75"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="btnActionFavorito:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KLU-fL-wLw"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7k6-ZL-9fs" secondAttribute="trailing" constant="20" symbolic="YES" id="1MU-s3-oBx"/>
                     <constraint firstItem="tvp-as-WrN" firstAttribute="top" secondItem="iSR-8W-a7K" secondAttribute="bottom" constant="33" id="754-zY-Bee"/>
                     <constraint firstItem="iSR-8W-a7K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="8Ee-2l-c1r"/>
+                    <constraint firstAttribute="bottom" secondItem="7k6-ZL-9fs" secondAttribute="bottom" constant="36" id="99A-Yj-QAT"/>
                     <constraint firstItem="iO0-tH-hHv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MPL-pV-6QU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tvp-as-WrN" secondAttribute="bottom" constant="18" id="UKJ-6g-1DV"/>
                     <constraint firstItem="tvp-as-WrN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ws2-B6-4wM"/>
                     <constraint firstItem="iSR-8W-a7K" firstAttribute="leading" secondItem="iO0-tH-hHv" secondAttribute="trailing" constant="8" symbolic="YES" id="XTH-0R-rnO"/>
                     <constraint firstItem="iO0-tH-hHv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="gWY-6u-sMl"/>
                     <constraint firstAttribute="trailing" secondItem="iSR-8W-a7K" secondAttribute="trailing" constant="20" symbolic="YES" id="jTd-pw-tTh"/>
+                    <constraint firstItem="7k6-ZL-9fs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="37" id="luy-gA-xzh"/>
                     <constraint firstAttribute="bottom" secondItem="iO0-tH-hHv" secondAttribute="bottom" constant="9" id="mMO-0o-r3e"/>
                     <constraint firstItem="tvp-as-WrN" firstAttribute="leading" secondItem="iO0-tH-hHv" secondAttribute="trailing" constant="8" symbolic="YES" id="oNq-lY-1UL"/>
                     <constraint firstItem="tvp-as-WrN" firstAttribute="top" secondItem="iSR-8W-a7K" secondAttribute="bottom" constant="33" id="xkO-Q8-Koi"/>
@@ -55,6 +66,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnFavorito" destination="7k6-ZL-9fs" id="IHt-Vt-vyh"/>
                 <outlet property="imgPoster" destination="iO0-tH-hHv" id="GTc-ym-Nz6"/>
                 <outlet property="lblFechaEstreno" destination="tvp-as-WrN" id="PPp-Ae-Udu"/>
                 <outlet property="lblNombrePelicula" destination="iSR-8W-a7K" id="yu6-gW-wOe"/>
@@ -62,4 +74,7 @@
             <point key="canvasLocation" x="276.81159420289856" y="60.9375"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>
