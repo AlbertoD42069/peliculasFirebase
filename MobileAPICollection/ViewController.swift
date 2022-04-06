@@ -9,6 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 class ViewController: UITabBarController{
+    
     var db = Firestore.firestore()
     /*@IBOutlet weak var TablaPeliculas: UITableView!
     
@@ -20,9 +21,9 @@ class ViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let home = TablaPeliculasViewController(email: "email")
+        let home = TablaPrincipalPeliculasViewController()
         let favoritos = TablaFavoritosViewController()
-        let inicioSesion = LoginViewController()
+        let inicioSesion = IniciarSesionViewController()
         
         home.title = "Home"
         favoritos.title = "Favoritos"

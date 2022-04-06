@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YjN-cz-Sfs">
-                    <rect key="frame" x="16" y="60" width="382" height="382"/>
+                    <rect key="frame" x="16" y="60" width="382" height="421"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-JG-ZEg">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="31"/>
@@ -98,6 +98,14 @@
                                 <action selector="btnActionCerrarSesion:" destination="-1" eventType="touchUpInside" id="88s-p6-aDn"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2b-J1-FQJ">
+                            <rect key="frame" x="0.0" y="390" width="382" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Home"/>
+                            <connections>
+                                <action selector="btnHome:" destination="-1" eventType="touchUpInside" id="4vj-fV-QZS"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </stackView>
             </subviews>
@@ -108,7 +116,7 @@
                 <constraint firstItem="YjN-cz-Sfs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="azC-8Z-Rqw"/>
                 <constraint firstItem="YjN-cz-Sfs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="s1e-Pf-vTO"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="90"/>
+            <point key="canvasLocation" x="-354" y="22"/>
         </view>
     </objects>
     <resources>

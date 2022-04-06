@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150F79FC27FCCE24006C75FF /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F79FA27FCCE24006C75FF /* IniciarSesionViewController.swift */; };
+		150F79FD27FCCE24006C75FF /* IniciarSesionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F79FB27FCCE24006C75FF /* IniciarSesionViewController.xib */; };
+		150F7A0027FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F79FE27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift */; };
+		150F7A0127FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */; };
+		150F7A0327FCF8E8006C75FF /* ClaseSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7A0227FCF8E8006C75FF /* ClaseSingleton.swift */; };
 		153EEB3527F7826900B8B2ED /* PantallasTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EEB3427F7826900B8B2ED /* PantallasTabBarController.swift */; };
-		153EEB3927F7C7D400B8B2ED /* TablaPeliculasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EEB3727F7C7D400B8B2ED /* TablaPeliculasViewController.swift */; };
 		153EEB3A27F7C7D400B8B2ED /* TablaPeliculasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */; };
-		154BDB2A27F52FB700778343 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BDB2827F52FB700778343 /* LoginViewController.swift */; };
 		154BDB2B27F52FB700778343 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154BDB2927F52FB700778343 /* LoginViewController.xib */; };
 		154BDB3427F5307400778343 /* CeldaFavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BDB3227F5307400778343 /* CeldaFavoritosTableViewCell.swift */; };
 		154BDB3527F5307400778343 /* CeldaFavoritosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154BDB3327F5307400778343 /* CeldaFavoritosTableViewCell.xib */; };
@@ -41,10 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150F79FA27FCCE24006C75FF /* IniciarSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesionViewController.swift; sourceTree = "<group>"; };
+		150F79FB27FCCE24006C75FF /* IniciarSesionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IniciarSesionViewController.xib; sourceTree = "<group>"; };
+		150F79FE27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablaPrincipalPeliculasViewController.swift; sourceTree = "<group>"; };
+		150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaPrincipalPeliculasViewController.xib; sourceTree = "<group>"; };
+		150F7A0227FCF8E8006C75FF /* ClaseSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaseSingleton.swift; sourceTree = "<group>"; };
 		153EEB3427F7826900B8B2ED /* PantallasTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallasTabBarController.swift; sourceTree = "<group>"; };
-		153EEB3727F7C7D400B8B2ED /* TablaPeliculasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablaPeliculasViewController.swift; sourceTree = "<group>"; };
 		153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaPeliculasViewController.xib; sourceTree = "<group>"; };
-		154BDB2827F52FB700778343 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		154BDB2927F52FB700778343 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		154BDB3227F5307400778343 /* CeldaFavoritosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaFavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		154BDB3327F5307400778343 /* CeldaFavoritosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaFavoritosTableViewCell.xib; sourceTree = "<group>"; };
@@ -103,8 +109,9 @@
 			children = (
 				15CCD54127EA3908007FAE68 /* CeldaPopulares */,
 				15CCD54227EA3920007FAE68 /* CeldaUpComing */,
-				153EEB3727F7C7D400B8B2ED /* TablaPeliculasViewController.swift */,
 				153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */,
+				150F79FE27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift */,
+				150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */,
 			);
 			path = TablaPeliculas;
 			sourceTree = "<group>";
@@ -112,9 +119,10 @@
 		154BDB2727F52BCD00778343 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				154BDB2827F52FB700778343 /* LoginViewController.swift */,
 				154BDB2927F52FB700778343 /* LoginViewController.xib */,
 				154BDB3A27F61ABC00778343 /* AutentificarViewController.swift */,
+				150F79FA27FCCE24006C75FF /* IniciarSesionViewController.swift */,
+				150F79FB27FCCE24006C75FF /* IniciarSesionViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 				15CCD52327EA3190007FAE68 /* AppDelegate.swift */,
 				15CCD52527EA3190007FAE68 /* SceneDelegate.swift */,
 				15CCD52727EA3190007FAE68 /* ViewController.swift */,
+				150F7A0227FCF8E8006C75FF /* ClaseSingleton.swift */,
 				15CCD52927EA3190007FAE68 /* Main.storyboard */,
 				15CCD52C27EA3199007FAE68 /* Assets.xcassets */,
 				15CCD52E27EA3199007FAE68 /* LaunchScreen.storyboard */,
@@ -330,6 +339,7 @@
 				154BDB2B27F52FB700778343 /* LoginViewController.xib in Resources */,
 				154BDB3527F5307400778343 /* CeldaFavoritosTableViewCell.xib in Resources */,
 				15D3BA0127FBA35000A5CD39 /* TablaFavoritosViewController.xib in Resources */,
+				150F7A0127FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib in Resources */,
 				15CCD54A27EA3A20007FAE68 /* UpComingTableViewCell.xib in Resources */,
 				15CCD53027EA3199007FAE68 /* LaunchScreen.storyboard in Resources */,
 				153EEB3A27F7C7D400B8B2ED /* TablaPeliculasViewController.xib in Resources */,
@@ -337,6 +347,7 @@
 				1591296F27EB9E6900570FF2 /* DetallesPeliculaViewController.xib in Resources */,
 				154BDB4027F61D8900778343 /* SesionIniciadaViewController.xib in Resources */,
 				15CCD52D27EA3199007FAE68 /* Assets.xcassets in Resources */,
+				150F79FD27FCCE24006C75FF /* IniciarSesionViewController.xib in Resources */,
 				1561EB7F27F5109E00DF1F05 /* GoogleService-Info.plist in Resources */,
 				15CCD52B27EA3190007FAE68 /* Main.storyboard in Resources */,
 			);
@@ -396,19 +407,20 @@
 				1591296A27EB9AEB00570FF2 /* JSONMobileAPIUpComingCollection.swift in Sources */,
 				15CCD54527EA3A01007FAE68 /* PopularesTableViewCell.swift in Sources */,
 				15D3BA0027FBA35000A5CD39 /* TablaFavoritosViewController.swift in Sources */,
-				153EEB3927F7C7D400B8B2ED /* TablaPeliculasViewController.swift in Sources */,
+				150F79FC27FCCE24006C75FF /* IniciarSesionViewController.swift in Sources */,
 				1591296E27EB9E6900570FF2 /* DetallesPeliculaViewController.swift in Sources */,
 				15D3BA0427FBC5CD00A5CD39 /* File.swift in Sources */,
 				15CCD52427EA3190007FAE68 /* AppDelegate.swift in Sources */,
+				150F7A0027FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift in Sources */,
 				15CCD54D27EA3CEC007FAE68 /* JSONMobileAPIPopularesCollection.swift in Sources */,
 				154BDB3B27F61ABC00778343 /* AutentificarViewController.swift in Sources */,
 				154BDB3427F5307400778343 /* CeldaFavoritosTableViewCell.swift in Sources */,
 				153EEB3527F7826900B8B2ED /* PantallasTabBarController.swift in Sources */,
+				150F7A0327FCF8E8006C75FF /* ClaseSingleton.swift in Sources */,
 				1591299827EBA9D900570FF2 /* ExecuteJSON.swift in Sources */,
 				154BDB3F27F61D8900778343 /* SesionIniciadaViewController.swift in Sources */,
 				15CCD52627EA3190007FAE68 /* SceneDelegate.swift in Sources */,
 				15CCD55F27EB8193007FAE68 /* ExtensionImageView.swift in Sources */,
-				154BDB2A27F52FB700778343 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

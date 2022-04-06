@@ -17,13 +17,13 @@ class PantallasTabBarController: UITabBarController{
     func tabBar(){
         let home = ViewController()
         let favoritos = TablaFavoritosViewController()
-        let inicioSesion = LoginViewController()
+        //let inicioSesion = LoginViewController()
         
         home.title = "Home"
         favoritos.title = "Favoritos"
-        inicioSesion.title = "Sesion"
+        //inicioSesion.title = "Sesion"
         
-        self .setViewControllers([home,favoritos,inicioSesion], animated: true)
+        self .setViewControllers([home,favoritos], animated: true)
         guard let items = self.tabBar.items else {return}
         let imagenes = ["home","favoritos","sesion"]
         

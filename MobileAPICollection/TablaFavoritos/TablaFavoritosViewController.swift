@@ -34,8 +34,8 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
         TablaFavoritos.register(celdaFavoritos, forCellReuseIdentifier: "celdaFavorito")
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 
-    
+       return 2
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celdaFavoritos = TablaFavoritos.dequeueReusableCell(withIdentifier: "celdaFavorito", for: indexPath) as! CeldaFavoritosTableViewCell
         
@@ -51,16 +51,6 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         return celdaFavoritos
     }
-
 }

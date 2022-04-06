@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import FirebaseAuth
+import FirebaseAuth
 import FirebaseFirestore
 
 class DetallesPeliculaViewController: UIViewController {
@@ -21,11 +21,12 @@ class DetallesPeliculaViewController: UIViewController {
     
     @IBOutlet weak var btnFavoritos: UIButton!
     
-    
     var pelicula:Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //print(userData.userId)
         if
             let nombrePelicula = pelicula?.title,
             let descripcionPelicula = pelicula?.overview,
@@ -47,19 +48,43 @@ class DetallesPeliculaViewController: UIViewController {
     }
     
     let dataBase = Firestore.firestore()
+    /*private let email: String
+    private let provider :ProviderType
     
-    
+    init(email:String, provider:ProviderType) {
+        self.email = email
+        self.provider = provider
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder){
+        fatalError("init(coder:) has not been implemented")
+    }*/
+    let userData = UserData.shared
     @IBAction func btnActionFavoritos(_ sender: Any) {
-
-        let idPelicula = pelicula?.id
+        //let usuario = Auth.auth().currentUser
+        guard let id = pelicula?.id else {return}
+        //let strInt = String(id)
+        if Auth.auth().currentUser?.uid == userData.userId {
+            
+            print("alv")
+        }
+        //dataBase.collection("PeliculaFav").document(usuario?.uid ?? "").setData(["idPeli": id], merge: true)
+        
+        dataBase.collection("UserPeliculaFavorita").document(UserData.shared.userId ?? "").setData(["idPelicula2": id])
+         /*
+         let coleccion = dataBase
+             .collection("peliFav").document(usuario!.email ?? "")
+             .collection(peliculas ?? "").document(String(id))*/
+    }
+        /*let idPelicula = pelicula?.id
         guard let nombrePelicula = pelicula?.title else { return }
         
         dataBase.collection("Pelicula Favoritas").document(nombrePelicula).setData([
             "ID": idPelicula ?? "",
             "nombrePelicula": nombrePelicula
         ])
-        
-    }
+        */
+    
     
     /*
     // MARK: - Navigation

@@ -111,11 +111,13 @@ class SesionIniciadaViewController: UIViewController {
                 if let usuario = document.get("usuario") as? String {
                     self.txtUsuario.text = usuario
                 }else {self.txtUsuario.text = "" }
-                if let nombre = document.get("usuario") as? String {
+                
+                if let nombre = document.get("nombre") as? String {
                     self.txtNombre.text = nombre
                 }else {
                     self.txtNombre.text = ""
                 }
+                
                 if let fechaNacimiento = document.get("fechaNacimiento") as? String {
                     self.txtFechaNacimiento.text = fechaNacimiento
                 }
@@ -143,6 +145,13 @@ class SesionIniciadaViewController: UIViewController {
         view.endEditing(true)
         
         db.collection("user").document(email).delete()
+    }
+    
+    
+    @IBAction func btnHome(_ sender: Any) {
+        navigationController?.pushViewController(ViewController(), animated: true)
+        //present(ViewController(), animated: true)
+        
     }
     /*
     // MARK: - Navigation

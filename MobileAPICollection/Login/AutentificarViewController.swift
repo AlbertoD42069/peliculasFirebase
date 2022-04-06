@@ -12,7 +12,7 @@ import UIKit
 class AutentificarViewController: UINavigationController{
     
     
-    let login = LoginViewController()
+/*    let login = LoginViewController()
     
     func crearUsuario(){
         if let email = login.txtEmail.text,
@@ -44,5 +44,5 @@ class AutentificarViewController: UINavigationController{
                 }
             }
         }
-    }
+    }*/
     }
