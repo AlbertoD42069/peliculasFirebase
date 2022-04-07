@@ -13,7 +13,6 @@
 		150F7A0127FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */; };
 		150F7A0327FCF8E8006C75FF /* ClaseSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7A0227FCF8E8006C75FF /* ClaseSingleton.swift */; };
 		153EEB3527F7826900B8B2ED /* PantallasTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153EEB3427F7826900B8B2ED /* PantallasTabBarController.swift */; };
-		153EEB3A27F7C7D400B8B2ED /* TablaPeliculasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */; };
 		154BDB2B27F52FB700778343 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154BDB2927F52FB700778343 /* LoginViewController.xib */; };
 		154BDB3427F5307400778343 /* CeldaFavoritosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BDB3227F5307400778343 /* CeldaFavoritosTableViewCell.swift */; };
 		154BDB3527F5307400778343 /* CeldaFavoritosTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154BDB3327F5307400778343 /* CeldaFavoritosTableViewCell.xib */; };
@@ -40,6 +39,8 @@
 		15D3BA0027FBA35000A5CD39 /* TablaFavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3B9FE27FBA35000A5CD39 /* TablaFavoritosViewController.swift */; };
 		15D3BA0127FBA35000A5CD39 /* TablaFavoritosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15D3B9FF27FBA35000A5CD39 /* TablaFavoritosViewController.xib */; };
 		15D3BA0427FBC5CD00A5CD39 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D3BA0327FBC5CD00A5CD39 /* File.swift */; };
+		15FCD4D427FF406B009DC0FC /* Repositorio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCD4D327FF406B009DC0FC /* Repositorio.swift */; };
+		15FCD4D627FF462A009DC0FC /* Favoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FCD4D527FF462A009DC0FC /* Favoritos.swift */; };
 		B89ED4DFE8C3DCBFC82AB392 /* Pods_MobileAPICollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172F0AC6C5C08FE951A14B4A /* Pods_MobileAPICollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,6 @@
 		150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaPrincipalPeliculasViewController.xib; sourceTree = "<group>"; };
 		150F7A0227FCF8E8006C75FF /* ClaseSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaseSingleton.swift; sourceTree = "<group>"; };
 		153EEB3427F7826900B8B2ED /* PantallasTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallasTabBarController.swift; sourceTree = "<group>"; };
-		153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaPeliculasViewController.xib; sourceTree = "<group>"; };
 		154BDB2927F52FB700778343 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		154BDB3227F5307400778343 /* CeldaFavoritosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaFavoritosTableViewCell.swift; sourceTree = "<group>"; };
 		154BDB3327F5307400778343 /* CeldaFavoritosTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CeldaFavoritosTableViewCell.xib; sourceTree = "<group>"; };
@@ -79,6 +79,8 @@
 		15D3B9FE27FBA35000A5CD39 /* TablaFavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablaFavoritosViewController.swift; sourceTree = "<group>"; };
 		15D3B9FF27FBA35000A5CD39 /* TablaFavoritosViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablaFavoritosViewController.xib; sourceTree = "<group>"; };
 		15D3BA0327FBC5CD00A5CD39 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		15FCD4D327FF406B009DC0FC /* Repositorio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositorio.swift; sourceTree = "<group>"; };
+		15FCD4D527FF462A009DC0FC /* Favoritos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favoritos.swift; sourceTree = "<group>"; };
 		172F0AC6C5C08FE951A14B4A /* Pods_MobileAPICollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileAPICollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4DB6016C4A4201F5E0E397 /* Pods-MobileAPICollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAPICollection.debug.xcconfig"; path = "Target Support Files/Pods-MobileAPICollection/Pods-MobileAPICollection.debug.xcconfig"; sourceTree = "<group>"; };
 		51804C2B8C8CB57E09EFE1BE /* Pods-MobileAPICollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileAPICollection.release.xcconfig"; path = "Target Support Files/Pods-MobileAPICollection/Pods-MobileAPICollection.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 			children = (
 				15CCD54127EA3908007FAE68 /* CeldaPopulares */,
 				15CCD54227EA3920007FAE68 /* CeldaUpComing */,
-				153EEB3827F7C7D400B8B2ED /* TablaPeliculasViewController.xib */,
 				150F79FE27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift */,
 				150F79FF27FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib */,
 			);
@@ -157,6 +158,7 @@
 		1591299627EBA9BA00570FF2 /* ExecuteJSON */ = {
 			isa = PBXGroup;
 			children = (
+				15FCD4D227FF4056009DC0FC /* repositorio */,
 				1591299727EBA9D900570FF2 /* ExecuteJSON.swift */,
 			);
 			path = ExecuteJSON;
@@ -247,6 +249,7 @@
 				154BDB3127F5302A00778343 /* celdaFavoritos */,
 				15D3B9FE27FBA35000A5CD39 /* TablaFavoritosViewController.swift */,
 				15D3B9FF27FBA35000A5CD39 /* TablaFavoritosViewController.xib */,
+				15FCD4D527FF462A009DC0FC /* Favoritos.swift */,
 			);
 			path = TablaFavoritos;
 			sourceTree = "<group>";
@@ -257,6 +260,14 @@
 				15D3BA0327FBC5CD00A5CD39 /* File.swift */,
 			);
 			path = consulataFireBase;
+			sourceTree = "<group>";
+		};
+		15FCD4D227FF4056009DC0FC /* repositorio */ = {
+			isa = PBXGroup;
+			children = (
+				15FCD4D327FF406B009DC0FC /* Repositorio.swift */,
+			);
+			path = repositorio;
 			sourceTree = "<group>";
 		};
 		981779BD62C339FFB7775B8D /* Pods */ = {
@@ -342,7 +353,6 @@
 				150F7A0127FCD63D006C75FF /* TablaPrincipalPeliculasViewController.xib in Resources */,
 				15CCD54A27EA3A20007FAE68 /* UpComingTableViewCell.xib in Resources */,
 				15CCD53027EA3199007FAE68 /* LaunchScreen.storyboard in Resources */,
-				153EEB3A27F7C7D400B8B2ED /* TablaPeliculasViewController.xib in Resources */,
 				15CCD54627EA3A01007FAE68 /* PopularesTableViewCell.xib in Resources */,
 				1591296F27EB9E6900570FF2 /* DetallesPeliculaViewController.xib in Resources */,
 				154BDB4027F61D8900778343 /* SesionIniciadaViewController.xib in Resources */,
@@ -406,9 +416,11 @@
 				15CCD54927EA3A20007FAE68 /* UpComingTableViewCell.swift in Sources */,
 				1591296A27EB9AEB00570FF2 /* JSONMobileAPIUpComingCollection.swift in Sources */,
 				15CCD54527EA3A01007FAE68 /* PopularesTableViewCell.swift in Sources */,
+				15FCD4D627FF462A009DC0FC /* Favoritos.swift in Sources */,
 				15D3BA0027FBA35000A5CD39 /* TablaFavoritosViewController.swift in Sources */,
 				150F79FC27FCCE24006C75FF /* IniciarSesionViewController.swift in Sources */,
 				1591296E27EB9E6900570FF2 /* DetallesPeliculaViewController.swift in Sources */,
+				15FCD4D427FF406B009DC0FC /* Repositorio.swift in Sources */,
 				15D3BA0427FBC5CD00A5CD39 /* File.swift in Sources */,
 				15CCD52427EA3190007FAE68 /* AppDelegate.swift in Sources */,
 				150F7A0027FCD63D006C75FF /* TablaPrincipalPeliculasViewController.swift in Sources */,

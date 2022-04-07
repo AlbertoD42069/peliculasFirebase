@@ -8,13 +8,18 @@
 import UIKit
 
 class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 
     @IBOutlet weak var TablaPeliculas: UITableView!
+    
+    let userData = UserData.shared
+    let repositoryMovies = MoviesRepository()
     var moviePopulares:[Movie]=[]
     var MovieUpComing: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         let JSONPopular = ExecuteJSON()
         JSONPopular.executeJSON(url: Urls.linkPopular) { moviePopular in
@@ -35,11 +40,17 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
         
         TablaPeliculas.register(celdaPopulares, forCellReuseIdentifier: "CellPopulares")
         TablaPeliculas.register(celdaUpComing, forCellReuseIdentifier: "CellUpComing")
+        
+        repositoryMovies.delegate = self
+        repositoryMovies.getData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return moviePopulares.count
-        return MovieUpComing.count
+        if (section == 0) {
+            return moviePopulares.count
+        }else {
+            return MovieUpComing.count
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -92,7 +103,7 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
             navigationController?.pushViewController(pantalla, animated: true)
         }else {
             let pantalla = DetallesPeliculaViewController()
-            let arreglo = MovieUpComing[indexPath.row]
+            let arreglo = moviePopulares[indexPath.row]
             pantalla.pelicula = arreglo
             navigationController?.pushViewController(pantalla, animated: true)
             
@@ -109,4 +120,17 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
     }
     */
 
+}
+extension TablaPrincipalPeliculasViewController: RepositoryDelegate {
+    
+    func didUpdateData() {
+        self.moviePopulares = repositoryMovies.getPopulates()
+        self.moviePopulares = repositoryMovies.getUpcomming()
+        self.TablaPeliculas.reloadData()
+    }
+    
+    func didSearchMovie(movie: Movie) {
+        dump(movie)
+    }
+    
 }

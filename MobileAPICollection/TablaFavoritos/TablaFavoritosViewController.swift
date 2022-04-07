@@ -12,7 +12,8 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var TablaFavoritos: UITableView!
     
-    
+    let userData = UserData.shared
+    let repositoryMovies = MoviesRepository()
     let db = Firestore.firestore()
     
     
@@ -20,6 +21,10 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+      
+        
         
         let JSONPopular = ExecuteJSON()
         JSONPopular.executeJSON(url: Urls.linkPopular) { movieFavoritos in
@@ -32,6 +37,16 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
         
         let celdaFavoritos = UINib(nibName: "CeldaFavoritosTableViewCell", bundle: nil)
         TablaFavoritos.register(celdaFavoritos, forCellReuseIdentifier: "celdaFavorito")
+        
+        repositoryMovies.delegate = self
+        repositoryMovies.getData()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        repositoryMovies.searchMovie(id: "634649")
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 2
@@ -39,18 +54,20 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celdaFavoritos = TablaFavoritos.dequeueReusableCell(withIdentifier: "celdaFavorito", for: indexPath) as! CeldaFavoritosTableViewCell
         
-        //celdaFavoritos.lblPeliculaFavorita.text = peiluculasFavoritas[indexPath.row].title!.capitalized
-        db.collection("Pelicula Favoritas").document().getDocument{
-            (documentSnapshot,error) in
-            if let documetn = documentSnapshot, error == nil {
-                if let nombrePelicula = documetn.get("nombrePelicula") as? String {
-                    celdaFavoritos.lblPeliculaFavorita.text = nombrePelicula
-                }else {
-                    celdaFavoritos.lblPeliculaFavorita.text = ""
-                }
-            }
-        }
         
         return celdaFavoritos
     }
+}
+extension TablaFavoritosViewController: RepositoryDelegate {
+    
+    func didUpdateData() {
+        self.peiluculasFavoritas = repositoryMovies.getPopulates()
+        self.peiluculasFavoritas = repositoryMovies.getUpcomming()
+        self.TablaFavoritos.reloadData()
+    }
+    
+    func didSearchMovie(movie: Movie) {
+        dump(movie)
+    }
+    
 }
