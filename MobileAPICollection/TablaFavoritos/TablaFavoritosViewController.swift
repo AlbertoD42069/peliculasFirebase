@@ -7,12 +7,15 @@
 
 import UIKit
 import FirebaseFirestore
-
+/*
+ para implementar el protocolo en un delegado se debe de implementar el protocolo por lo general se implementa los protocolos en una extencion de la clase
+ */
 class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var TablaFavoritos: UITableView!
     
     let userData = UserData.shared
+    //instancia de la clase que consu
     let repositoryMovies = MoviesRepository()
     let db = Firestore.firestore()
     
@@ -21,10 +24,6 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-      
-        
         
         let JSONPopular = ExecuteJSON()
         JSONPopular.executeJSON(url: Urls.linkPopular) { movieFavoritos in
@@ -42,7 +41,7 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
         repositoryMovies.getData()
 
     }
-    
+    //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         repositoryMovies.searchMovie(id: "634649")
@@ -58,11 +57,24 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
         return celdaFavoritos
     }
 }
-extension TablaFavoritosViewController: RepositoryDelegate {
-    
+
+/*
+ 5// implementacion de protocolo en una extension de una clase
+*/
+extension TablaFavoritosViewController: RepositoryDelegateProtocol {
+/*
+como hemos implementado el protocolo se debe de implementar tambien sus funciones.
+*/
     func didUpdateData() {
+        /*
+         se esta asignando a que el array de peliculas use las funciones de los protocolos
+         */
         self.peiluculasFavoritas = repositoryMovies.getPopulates()
         self.peiluculasFavoritas = repositoryMovies.getUpcomming()
+        
+        /*
+         en los protocolos siempre se debe de hacer un <reloadData()>
+         */
         self.TablaFavoritos.reloadData()
     }
     
