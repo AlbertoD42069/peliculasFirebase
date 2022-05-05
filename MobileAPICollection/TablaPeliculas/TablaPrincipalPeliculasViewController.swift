@@ -21,17 +21,6 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
         super.viewDidLoad()
         
 
-        let JSONPopular = ExecuteJSON()
-        JSONPopular.executeJSON(url: Urls.linkPopular) { moviePopular in
-            self.moviePopulares = moviePopular
-            self.TablaPeliculas.reloadData()
-        }
-        
-        let JSONUpComing = ExecuteJSON()
-        JSONUpComing.executeJSON(url: Urls.linkUpComing) { movieUpComing in
-            self.MovieUpComing = movieUpComing
-            self.TablaPeliculas.reloadData()
-        }
         TablaPeliculas.delegate = self
         TablaPeliculas.dataSource = self
         
@@ -43,6 +32,12 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
         
         repositoryMovies.delegate = self
         repositoryMovies.getData()
+        
+        let favorites = FavoritesManager()
+
+        favorites.getFavorites {favorites in
+            dump(favorites)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,9 +52,9 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
         if indexPath.section == 0{
             let celdaPopulares = TablaPeliculas.dequeueReusableCell(withIdentifier: "CellPopulares", for: indexPath) as! PopularesTableViewCell
             
-            celdaPopulares.lblNombrePelicula.text = "nombre: \(moviePopulares[indexPath.row].title!.capitalized)"
+            celdaPopulares.lblNombrePelicula.text = "nombre: \(moviePopulares[indexPath.row].title.capitalized)"
             //celdaPopulares.lblDescripcion.text = "descripcion: \(moviePopulares[indexPath.row].overview!.capitalized)"
-            celdaPopulares.lblCalificacion.text = "Idioma: \(moviePopulares[indexPath.row].original_language!.capitalized)"
+            celdaPopulares.lblCalificacion.text = "Idioma: \(moviePopulares[indexPath.row].original_language.capitalized)"
             
             
             celdaPopulares.imageView?.contentMode = .scaleAspectFill
@@ -74,8 +69,8 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
         //return UITableViewCell()
 /*=======================================================================================================*/
         let CeldaUpComing = TablaPeliculas.dequeueReusableCell(withIdentifier: "CellUpComing", for: indexPath) as! UpComingTableViewCell
-        CeldaUpComing.lblNombrePelicula.text = "nombre: \(MovieUpComing[indexPath.row].title!.capitalized)"
-        CeldaUpComing.lblFechaEstreno.text = "Fecha estreno: \(MovieUpComing[indexPath.row].release_date!.capitalized)"
+        CeldaUpComing.lblNombrePelicula.text = "nombre: \(MovieUpComing[indexPath.row].title.capitalized)"
+        CeldaUpComing.lblFechaEstreno.text = "Fecha estreno: \(MovieUpComing[indexPath.row].release_date.capitalized)"
         
         CeldaUpComing.imageView?.contentMode = .scaleAspectFill
         let linkDefault = "https://image.tmdb.org/t/p/w500/"
@@ -121,11 +116,11 @@ class TablaPrincipalPeliculasViewController: UIViewController, UITableViewDelega
     */
 
 }
-extension TablaPrincipalPeliculasViewController: RepositoryDelegate {
+extension TablaPrincipalPeliculasViewController: RepositoryDelegateProtocol {
     
     func didUpdateData() {
         self.moviePopulares = repositoryMovies.getPopulates()
-        self.moviePopulares = repositoryMovies.getUpcomming()
+        self.moviePopulares = repositoryMovies.getPopulates()
         self.TablaPeliculas.reloadData()
     }
     

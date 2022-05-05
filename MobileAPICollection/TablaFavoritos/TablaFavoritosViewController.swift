@@ -25,8 +25,8 @@ class TablaFavoritosViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let JSONPopular = ExecuteJSON()
-        JSONPopular.executeJSON(url: Urls.linkPopular) { movieFavoritos in
+        let JSONPopular = ServiceManager()
+        JSONPopular.execute(url: Urls.linkPopular) { movieFavoritos in
             self.peiluculasFavoritas = movieFavoritos
             self.TablaFavoritos.reloadData()
         }
@@ -70,7 +70,7 @@ como hemos implementado el protocolo se debe de implementar tambien sus funcione
          se esta asignando a que el array de peliculas use las funciones de los protocolos
          */
         self.peiluculasFavoritas = repositoryMovies.getPopulates()
-        self.peiluculasFavoritas = repositoryMovies.getUpcomming()
+        self.peiluculasFavoritas = repositoryMovies.getPopulates()
         
         /*
          en los protocolos siempre se debe de hacer un <reloadData()>

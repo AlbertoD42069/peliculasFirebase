@@ -19,6 +19,7 @@ class ViewController: UITabBarController{
     var MovieUpComing: [Movie] = []*/
     
     override func viewDidLoad() {
+        print("hola")
         super.viewDidLoad()
         
         let home = TablaPrincipalPeliculasViewController()
@@ -37,8 +38,8 @@ class ViewController: UITabBarController{
             items[x].image = UIImage(systemName: imagenes[x])
     
     
-    
-    
+            let service = ServiceManager()
+           
     
     
     

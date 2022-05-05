@@ -68,13 +68,11 @@ class DetallesPeliculaViewController: UIViewController {
             
             print("alv")
         }
-        //dataBase.collection("PeliculaFav").document(usuario?.uid ?? "").setData(["idPeli": id], merge: true)
+        let fav = FavoritesManager()
+        if let peli = pelicula {
+            fav.setFavorites(movie: MovieViewData(id: peli.id, title: peli.title, image: peli.poster_path, rating: peli.vote_average, resume: peli.overview, date: peli.release_date))
+        }
         
-        dataBase.collection("UserPeliculaFavorita").document(UserData.shared.userId ?? "").setData(["idPelicula2": id])
-         /*
-         let coleccion = dataBase
-             .collection("peliFav").document(usuario!.email ?? "")
-             .collection(peliculas ?? "").document(String(id))*/
     }
         /*let idPelicula = pelicula?.id
         guard let nombrePelicula = pelicula?.title else { return }
